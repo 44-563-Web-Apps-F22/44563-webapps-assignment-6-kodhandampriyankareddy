@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>Music hungama</title>
+</head>
+ 
+<body>
+
+<h1>Musician guess by Kodhandam Priyanka Reddy</h1>
+<form>
+    <label for="MusicianName">Enter the secret musician name</label>
+    <input type ="password" id="MusicianName" name="MusicianName" value="John Lennon"> <br>
+
+    <label for="guessName">Guess the musician</label>
+    <input type ="text" id="guessName" name="guessName" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="check the guess">
+</form>
+
+
+<p id="result">Checking the count of Correct & Wrong answers</p>
+
+<script> 
+
+var correct = 0
+var wrong = 0
+
+function checkGuess(){
+    console.log("Getting form values")
+    name = document.getElementById("MusicianName").value
+    guess = document.getElementById("guessName").value
+    
+    if(name === guess){
+        correct = correct + 1
+        alert("You got it right")
+        
+    } else {
+        wrong = wrong + 1 
+        alert("wrong musician")
+
+    }
+    document.getElementById("result").innerHTML = "wrong guess :" + wrong + "\n correct guess :" + correct
+}
+</script>
+
+
+</body>
+</html>
